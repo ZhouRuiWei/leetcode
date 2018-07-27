@@ -14,7 +14,8 @@ public:
         {
             if(!l3)
             {
-                l3=t=(ListNode*)malloc(sizeof(ListNode));// create new node
+                // create new node, t is the moving pointer,l3 is the result
+                l3=t=(ListNode*)malloc(sizeof(ListNode));
             }
             else
             {
