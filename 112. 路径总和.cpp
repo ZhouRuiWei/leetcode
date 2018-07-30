@@ -59,3 +59,20 @@ public:
         
     }
 };
+
+
+
+//
+class Solution {
+public:
+    bool hasPathSum(TreeNode* root, int sum) {
+        TreeNode *p;
+        queue<TreeNode*> q;
+        if(!root)
+            return false;
+        if(!root->left && root->val==sum && !root->right)
+            return true;
+        return hasPathSum(root->left,sum-root->val) || hasPathSum(root->right,sum-root->val);
+    }
+};
+

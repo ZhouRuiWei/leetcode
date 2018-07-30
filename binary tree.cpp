@@ -169,3 +169,48 @@ int main()
     DblOrderTraverse(T);
     return 0;
 }
+//深度优先搜索
+//利用栈，现将右子树压栈再将左子树压栈, right first, left second
+void DepthFirstSearch(BitNode *root)
+{
+    stack<BitNode*> nodeStack;
+    nodeStack.push(root);
+    while (!nodeStack.empty())
+    {
+        BitNode *node = nodeStack.top();
+        cout << node->data << ' ';
+        nodeStack.pop();
+        if (node->right)
+        {
+            nodeStack.push(node->right);
+        }
+        if (node->left)
+        {
+            nodeStack.push(node->left);
+        }
+    }
+}
+
+
+59 
+60 //广度优先搜索
+61 void BreadthFirstSearch(BitNode *root)
+62 {
+63     queue<BitNode*> nodeQueue;
+64     nodeQueue.push(root);
+65     while (!nodeQueue.empty())
+66     {
+67         BitNode *node = nodeQueue.front();
+68         cout << node->data << ' ';
+69         nodeQueue.pop();
+70         if (node->left)
+71         {
+72             nodeQueue.push(node->left);
+73         }
+74         if (node->right)
+75         {
+76             nodeQueue.push(node->right);
+77         }
+78     }
+79 }
+

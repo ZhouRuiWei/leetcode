@@ -61,9 +61,6 @@ public:
                     return false;
             }
         }
-        if(ss.empty())
-            return true;
-        else
-            return false;
+        return ss.empty();
     }
 };
